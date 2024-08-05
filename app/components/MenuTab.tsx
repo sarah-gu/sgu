@@ -12,10 +12,13 @@ export const MenuTab = ({
 }) => (
   <div
     onClick={() => setMenuBar((prevMenuBar) => menuName)}
-    className={`${
-      menuBar === menuName ? "underline font-black" : ""
-    } hover:underline`}
+    className="relative cursor-pointer group"
   >
     {menuName}
+    <div
+      className={`absolute bottom-0 left-0 h-0.5 bg-black transition-all duration-300 ${
+        menuBar === menuName ? "w-full" : "w-0 group-hover:w-full"
+      }`}
+    ></div>
   </div>
 );

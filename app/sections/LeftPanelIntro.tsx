@@ -2,15 +2,17 @@ import Image from "next/image";
 
 export const LeftPanelIntro = () => {
   return (
-    <div className="flex flex-col gap-12">
-      <div className="text-5xl md:text-6xl lg:text-8xl">Sarah Gu</div>
-      <div className="text-gray-400 text-md">Software Engineer & Builder</div>
+    <div className="flex flex-col gap-4 w-1/3">
+      <div className="text-5xl md:text-7xl">Sarah Gu</div>
+      <div className="text-gray-400 text-2xl pb-8">
+        Software Engineer & Builder
+      </div>
       <Image
         src="/sarahgu.jpg"
         alt="Sarah Gu PFP"
         className="object-cover"
-        width={300}
-        height={500}
+        width={400}
+        height={700}
         priority
       />
     </div>

@@ -9,7 +9,7 @@ export const MenuHeader = ({
   menuBar: string;
   setMenuBar: Dispatch<SetStateAction<MenuBar>>;
 }) => (
-  <div className="w-2/3 text-sm md:text-xl lg:text-2xl flex flex-row gap-4 p-4 border-l-2 border-pantone">
+  <div className="w-full justify-between text-sm md:text-xl lg:text-2xl flex flex-row gap-4 p-4 border-l-2 border-pantone">
     <MenuTab menuName="About" menuBar={menuBar} setMenuBar={setMenuBar} />
     <MenuTab menuName="Experience" menuBar={menuBar} setMenuBar={setMenuBar} />
     <MenuTab menuName="Projects" menuBar={menuBar} setMenuBar={setMenuBar} />
