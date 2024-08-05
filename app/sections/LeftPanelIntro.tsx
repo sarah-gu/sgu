@@ -3,15 +3,8 @@ import { FacebookIcon } from "../icons/FacebookIcon";
 import { GithubIcon } from "../icons/GithubIcon";
 import { InstagramIcon } from "../icons/InstagramIcon";
 import { LinkedinIcon } from "../icons/LinkedinIcon";
-import { Dispatch, SetStateAction } from "react";
 
-export const LeftPanelIntro = ({
-  theme,
-  setTheme,
-}: {
-  theme: string;
-  setTheme: Dispatch<SetStateAction<"light" | "dark">>;
-}) => {
+export const LeftPanelIntro = ({ theme }: { theme: string }) => {
   return (
     <div className="flex flex-col w-1/3 h-full justify-between">
       <div className="flex flex-col gap-16 w-full">
@@ -28,27 +21,20 @@ export const LeftPanelIntro = ({
           />
           <div className="flex flex-col h-1/3 justify-end gap-1">
             <div className="h-1/6 w-12">
-              <FacebookIcon />
+              <FacebookIcon theme={theme} />
             </div>
             <div className="h-1/6 w-12">
-              <GithubIcon />
+              <GithubIcon theme={theme} />
             </div>
             <div className="h-1/6 w-12">
-              <InstagramIcon />
+              <InstagramIcon theme={theme} />
             </div>
             <div className="h-1/6 w-12">
-              <LinkedinIcon />
+              <LinkedinIcon theme={theme} />
             </div>
           </div>
         </div>
       </div>
-      <Image
-        onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-        src={`${theme === "light" ? `/darkmode.png` : `/lightmode.png`} `}
-        width={40}
-        height={40}
-        alt="lightmode"
-      />
     </div>
   );
 };

@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useState } from "react";
 import { LeftPanelIntro } from "./sections/LeftPanelIntro";
 import { RightPanelContent } from "./sections/RightPanelContent";
@@ -11,8 +12,16 @@ export default function Home() {
         theme === "light" ? `bg-white text-black` : `bg-black text-white`
       } flex flex-row h-screen w-screen p-16 lg:px-32 justify-between gap-24 lg:gap-36`}
     >
-      <LeftPanelIntro theme={theme} setTheme={setTheme} />
+      <LeftPanelIntro theme={theme} />
       <RightPanelContent theme={theme} />
+      <Image
+        className="fixed bottom-10 right-10"
+        onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+        src={`${theme === "light" ? `/darkmode.png` : `/lightmode.png`} `}
+        width={40}
+        height={40}
+        alt="lightmode"
+      />
     </main>
   );
 }
