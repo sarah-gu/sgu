@@ -6,7 +6,7 @@ export const About = () => {
         I&apos;m passionate about creating and building things, whether
         it&apos;s software, hardware, or something in between. I&apos;m a recent
         graduate of Columbia University, studying Computer Science in the School
-        of Engineering.
+        of Engineering and now work full-time at Citadel Securities.
       </div>
       <div>
         I&apos;m always looking for new opportunities to learn and grow, so feel
