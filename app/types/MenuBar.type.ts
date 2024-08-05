@@ -1,1 +1,6 @@
-export type MenuBar = "About" | "Experience" | "Projects";
+export type MenuBar =
+  | "About"
+  | "Experience"
+  | "Projects"
+  | "Hobbies"
+  | "Awards";
