@@ -45,7 +45,7 @@ export const Experience = () => {
       <ExperienceTab
         tabName="AI/ML Engineer"
         tabDescription="Internship, 2018; 2019; 2020"
-        imgPath="/meta.png"
+        imgPath="/mitre.png"
         activeExperience={activeExperience}
         setActiveExperience={setActiveExperience}
       />

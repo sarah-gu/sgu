@@ -9,7 +9,7 @@ export const LeftPanelIntro = () => {
         src="/sarahgu.jpg"
         alt="Sarah Gu PFP"
         className="object-cover"
-        width={400}
+        width={500}
         height={700}
         priority
       />

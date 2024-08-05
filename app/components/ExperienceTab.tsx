@@ -20,13 +20,9 @@ export const ExperienceTab = ({
         <div className="font-black text-xl">{tabName}</div>
         <div className="text-gray-400">{tabDescription}</div>
       </div>
-      <Image
-        src={imgPath}
-        width={140}
-        height={80}
-        alt="logo"
-        className="object-cover"
-      />
+      <div className="relative w-48 h-28">
+        <Image src={imgPath} layout="fill" objectFit="cover" alt="logo" />
+      </div>
     </div>
   );
 };
