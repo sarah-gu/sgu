@@ -1,6 +1,6 @@
 export const About = () => {
   return (
-    <div className="text-xl flex flex-col gap-12">
+    <div className="text-sm md:text-xl flex flex-col gap-12">
       <div>Hi! I&apos;m Sarah Gu, a software engineer and builder. ☺︎</div>
       <div>
         I&apos;m passionate about creating and building things, whether

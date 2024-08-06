@@ -10,7 +10,7 @@ export default function Home() {
     <main
       className={`${
         theme === "light" ? `bg-white text-black` : `bg-black text-white`
-      } flex flex-row h-screen w-screen p-16 lg:px-32 justify-between gap-24 lg:gap-36`}
+      } flex flex-col md:flex-row h-screen w-screen p-16 lg:px-32 md:justify-between md:gap-24 lg:gap-36`}
     >
       <LeftPanelIntro theme={theme} />
       <RightPanelContent theme={theme} />

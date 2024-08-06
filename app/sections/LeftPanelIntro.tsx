@@ -6,30 +6,32 @@ import { LinkedinIcon } from "../icons/LinkedinIcon";
 
 export const LeftPanelIntro = ({ theme }: { theme: string }) => {
   return (
-    <div className="flex flex-col w-1/3 h-full justify-between">
-      <div className="flex flex-col gap-16 w-full">
+    <div className="flex flex-col w-1/3 md:h-full justify-between">
+      <div className="flex flex-row md:flex-col gap-16 w-full items-center">
         <div className="text-5xl md:text-7xl">Sarah Gu</div>
 
-        <div className="flex flex-row gap-1 items-end w-full">
-          <Image
-            src="/sarahgu.jpg"
-            alt="Sarah Gu PFP"
-            className="object-cover"
-            width={500}
-            height={700}
-            priority
-          />
+        <div className="flex gap-1 items-center md:items-end w-full">
+          <div className="w-24 h-24 md:w-72 md:h-96 relative">
+            <Image
+              src="/sarahgu.jpg"
+              alt="Sarah Gu PFP"
+              layout="fill"
+              objectFit="cover"
+              priority
+            />
+          </div>
+
           <div className="flex flex-col h-1/3 justify-end gap-1">
-            <div className="h-1/6 w-12">
+            <div className="h-1/6 w-4 md:w-12">
               <FacebookIcon theme={theme} />
             </div>
-            <div className="h-1/6 w-12">
+            <div className="h-1/6 w-4 md:w-12">
               <GithubIcon theme={theme} />
             </div>
-            <div className="h-1/6 w-12">
+            <div className="h-1/6 w-4 md:w-12">
               <InstagramIcon theme={theme} />
             </div>
-            <div className="h-1/6 w-12">
+            <div className="h-1/6 w-4 md:w-12">
               <LinkedinIcon theme={theme} />
             </div>
           </div>

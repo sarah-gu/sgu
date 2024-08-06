@@ -9,7 +9,7 @@ import { Hobbies } from "../tabs/Hobbies";
 export const RightPanelContent = ({ theme }: { theme: string }) => {
   const [menuBar, setMenuBar] = useState<MenuBar>("About");
   return (
-    <div className="flex flex-col gap-16 w-full">
+    <div className="flex flex-col gap-8 md:gap-16 w-full h-full">
       <MenuHeader menuBar={menuBar} setMenuBar={setMenuBar} theme={theme} />
       {menuBar === "Experience" ? (
         <Experience theme={theme} />

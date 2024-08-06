@@ -11,7 +11,7 @@ export const MenuHeader = ({
   menuBar: string;
   setMenuBar: Dispatch<SetStateAction<MenuBar>>;
 }) => (
-  <div className="w-full justify-between text-sm md:text-xl lg:text-2xl flex flex-row gap-4 p-5 border-l-2 border-pantone">
+  <div className="w-full justify-between text-sm md:text-xl lg:text-2xl flex flex-row gap-2 md:gap-4 py-4 md:p-5 md:border-l-2 border-pantone">
     <MenuTab
       menuName="About"
       menuBar={menuBar}
