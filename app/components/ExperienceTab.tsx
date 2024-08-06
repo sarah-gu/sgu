@@ -25,8 +25,8 @@ export const ExperienceTab = ({
             : `bg-gray-800 hover:bg-gray-700`
         } flex flex-col shadow-md`}
       >
-        <div className="font-black text-xl">{tabName}</div>
-        <div className="text-gray-400">{tabDescription}</div>
+        <div className="font-black text-sm md:text-xl">{tabName}</div>
+        <div className="text-gray-400 text-xs md:text-lg">{tabDescription}</div>
       </div>
       <div className="relative w-48 h-full shadow-md">
         <Image src={imgPath} layout="fill" objectFit="cover" alt="logo" />
