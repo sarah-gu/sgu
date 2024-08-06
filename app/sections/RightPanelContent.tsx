@@ -10,7 +10,7 @@ export const RightPanelContent = ({ theme }: { theme: string }) => {
   const [menuBar, setMenuBar] = useState<MenuBar>("About");
   return (
     <div className="flex flex-col gap-16 w-full">
-      <MenuHeader menuBar={menuBar} setMenuBar={setMenuBar} />
+      <MenuHeader menuBar={menuBar} setMenuBar={setMenuBar} theme={theme} />
       {menuBar === "Experience" ? (
         <Experience theme={theme} />
       ) : menuBar === "About" ? (
