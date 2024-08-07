@@ -6,7 +6,7 @@ import { ExperienceTab } from "../components/ExperienceTab";
 export const Experience = ({ theme }: { theme: string }) => {
   const [activeExperience, setActiveExperience] = useState<string>("");
   return (
-    <div className="flex flex-col gap-4 h-full overflow-y-scroll mb-12">
+    <div className="flex flex-col gap-4 overflow-y-scroll h-full">
       <ExperienceTab
         theme={theme}
         tabName="Front-End Engineer"

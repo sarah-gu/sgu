@@ -19,7 +19,7 @@ export const ExperienceTab = ({
   return (
     <div className="flex flex-row justify-between">
       <div
-        className={`p-6 w-full ${
+        className={`px-4 py-2 md:p-6 w-full ${
           theme === "light"
             ? `bg-gray-100 hover:bg-gray-200`
             : `bg-gray-800 hover:bg-gray-700`
@@ -28,7 +28,7 @@ export const ExperienceTab = ({
         <div className="font-black text-sm md:text-xl">{tabName}</div>
         <div className="text-gray-400 text-xs md:text-lg">{tabDescription}</div>
       </div>
-      <div className="relative w-48 h-full shadow-md">
+      <div className="relative w-20 md:w-48 h-full shadow-md">
         <Image src={imgPath} layout="fill" objectFit="cover" alt="logo" />
       </div>
     </div>
