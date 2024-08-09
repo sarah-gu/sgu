@@ -5,11 +5,12 @@ import { MenuHeader } from "../components/MenuHeader";
 import { Experience } from "../tabs/Experience";
 import { About } from "../tabs/About";
 import { Hobbies } from "../tabs/Hobbies";
+import { Projects } from "../tabs/Projects";
 
 export const RightPanelContent = ({ theme }: { theme: string }) => {
   const [menuBar, setMenuBar] = useState<MenuBar>("About");
   return (
-    <div className="flex flex-col gap-8 md:gap-16 w-full max-h-screen flex-grow">
+    <div className="flex flex-col gap-8 md:gap-16 w-full min-h-full max-h-screen flex-grow">
       <MenuHeader menuBar={menuBar} setMenuBar={setMenuBar} theme={theme} />
       {menuBar === "Experience" ? (
         <Experience theme={theme} />
@@ -17,6 +18,8 @@ export const RightPanelContent = ({ theme }: { theme: string }) => {
         <About />
       ) : menuBar === "Hobbies" ? (
         <Hobbies />
+      ) : menuBar === "Projects" ? (
+        <Projects />
       ) : (
         <></>
       )}
