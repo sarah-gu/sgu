@@ -17,7 +17,7 @@ export default function Home() {
       <Image
         className="fixed bottom-10 right-10"
         onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-        src={`${theme === "light" ? `/darkmode.png` : `/lightmode.png`} `}
+        src={`${theme === "light" ? `/darkmode_1.png` : `/lightmode_1.png`} `}
         width={40}
         height={40}
         alt="lightmode"
