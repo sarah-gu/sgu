@@ -5,9 +5,10 @@ export const HobbiesTab = (
   props: DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> & {
     bgImg: string;
     children: ReactNode;
+    onClick?: () => void;
   }
 ) => {
-  const { className, bgImg, children } = props;
+  const { className, bgImg, children, onClick } = props;
   return (
     <div
       className={twMerge(
@@ -18,6 +19,7 @@ export const HobbiesTab = (
         backgroundImage: `url('${bgImg}')`,
         backgroundSize: "cover",
       }}
+      onClick={onClick}
     >
       {children}
     </div>
