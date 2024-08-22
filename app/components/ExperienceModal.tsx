@@ -1,27 +1,43 @@
 import { Dispatch, SetStateAction } from "react";
 
 export const ExperienceModal = ({
+  theme,
   activeExperience,
   setActiveExperience,
 }: {
+  theme: string;
   activeExperience: string;
   setActiveExperience: Dispatch<SetStateAction<string>>;
 }) => {
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50">
-      <div className="fixed inset-0 bg-gray-900 opacity-75"></div>
-      <div className="flex flex-col z-10 bg-gray-200 m-10 p-6 md:p-10 gap-2 md:gap-4 rounded-lg w-1/2 h-1/2">
+      <div
+        className={`fixed inset-0 ${
+          theme === "light" ? "bg-gray-900" : "bg-gray-600"
+        } opacity-75`}
+      ></div>{" "}
+      <div
+        className={`flex flex-col z-10 ${
+          theme === "light" ? "bg-gray-200" : "bg-gray-800"
+        } m-10 p-6 md:p-10 gap-2 md:gap-4 rounded-lg w-2/3 h-2/3`}
+      >
         <div className="flex flex-row justify-between">
           <div className="text-3xl md:text-5xl">{activeExperience}</div>
           <button
             type="button"
-            className="text-xl md:text-3xl bg-gray-200 text-gray-800 rounded-lg"
+            className={`text-xl md:text-3xl ${
+              theme === "light" ? "text-gray-800" : "text-gray-200"
+            } rounded-lg`}
             onClick={() => setActiveExperience("")}
           >
             X
           </button>
         </div>
-        <div className="text-lg md:text-2xl text-gray-500">
+        <div
+          className={`text-lg md:text-2xl ${
+            theme === "light" ? "text-gray-500" : "text-gray-200"
+          }  border-b-2 border-pantone`}
+        >
           {activeExperience === "Citadel"
             ? "Front-End Engineer"
             : activeExperience === "Phia"
@@ -37,19 +53,23 @@ export const ExperienceModal = ({
             : ""}
         </div>
         {activeExperience === "Vivid" ? (
-          <div className="text-gray-500 text-md md:text-xl">
+          <div className="text-gray-500 text-md md:text-xl italic">
             Pre-seed, three-person startup converting Figma designs to frontend
             code.
           </div>
         ) : activeExperience === "Phia" ? (
-          <div>
-            Secondhand e-commerce startup led by Phoebe Gates & Sophia Kianni.
-            Pre-seed stage
+          <div className="text-gray-500 text-md md:text-xl italic">
+            Pre-seed stage, secondhand e-commerce startup led by Phoebe Gates &
+            Sophia Kianni.
           </div>
         ) : (
           <></>
         )}
-        <div className="text-sm md:text-lg text-gray-900 overflow-y-auto">
+        <div
+          className={`text-sm md:text-lg ${
+            theme === "light" ? "text-gray-900" : "text-gray-200"
+          } overflow-y-auto`}
+        >
           {activeExperience === "Citadel"
             ? "Developed a new options trading platform with a 10x speed improvement for scrolling, symbol switch, and data rendering compared to similar platforms used in the firm. Achieved full feature parity to existing trading UIs, implementing 20+ features such as click trade, channeling, and quote level editing. Presented platform to key stakeholders, influencing developers to use the project as a new standard for building future trading platforms. Pushed the platform to production, onboarding 5 options traders who expect to earn millions in PNL from performance upgrades."
             : activeExperience === "Phia"

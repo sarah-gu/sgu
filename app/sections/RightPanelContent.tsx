@@ -6,6 +6,7 @@ import { Experience } from "../tabs/Experience";
 import { About } from "../tabs/About";
 import { Hobbies } from "../tabs/Hobbies";
 import { Projects } from "../tabs/Projects";
+import { Contact } from "../tabs/Contact";
 
 export const RightPanelContent = ({ theme }: { theme: string }) => {
   const [menuBar, setMenuBar] = useState<MenuBar>("About");
@@ -19,9 +20,9 @@ export const RightPanelContent = ({ theme }: { theme: string }) => {
       ) : menuBar === "Hobbies" ? (
         <Hobbies />
       ) : menuBar === "Projects" ? (
-        <Projects />
+        <Projects theme={theme} />
       ) : (
-        <></>
+        <Contact />
       )}
     </div>
   );

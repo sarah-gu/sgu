@@ -4,10 +4,7 @@ import { HobbiesLabel } from "../components/HobbiesLabel";
 import { HobbiesTab } from "../components/HobbiesTab";
 import { ProjectModal } from "../components/ProjectModal";
 
-export const Projects = () => {
-  const handleClick = (link: string) => {
-    window.open(link, "_blank");
-  };
+export const Projects = ({ theme }: { theme: string }) => {
   const [activeProject, setActiveProject] = useState<string>("");
   return (
     <>
@@ -85,6 +82,7 @@ export const Projects = () => {
       </div>
       {activeProject !== "" && (
         <ProjectModal
+          theme={theme}
           activeProject={activeProject}
           setActiveProject={setActiveProject}
         />

@@ -66,6 +66,7 @@ export const Experience = ({ theme }: { theme: string }) => {
       </div>
       {activeExperience !== "" && (
         <ExperienceModal
+          theme={theme}
           activeExperience={activeExperience}
           setActiveExperience={setActiveExperience}
         />
