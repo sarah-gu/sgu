@@ -8,7 +8,7 @@ export const Experience = ({ theme }: { theme: string }) => {
   const [activeExperience, setActiveExperience] = useState<string>("");
   return (
     <>
-      <div className="flex flex-col gap-4 h-full overflow-y-auto">
+      <div className="flex flex-col gap-4 h-full overflow-y-auto no-scrollbar">
         <ExperienceTab
           theme={theme}
           companyName="Citadel"

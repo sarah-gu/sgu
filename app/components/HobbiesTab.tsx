@@ -14,7 +14,7 @@ export const HobbiesTab = (
   return (
     <div
       className={twMerge(
-        `h-full justify-center items-center flex relative`,
+        `h-full justify-center items-center flex relative cursor-pointer`,
         className
       )}
       style={{

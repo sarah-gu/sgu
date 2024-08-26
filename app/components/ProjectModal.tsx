@@ -89,7 +89,7 @@ export const ProjectModal = ({
         <div
           className={`text-sm md:text-lg ${
             theme === "light" ? "text-gray-900" : "text-gray-200"
-          } overflow-y-auto flex-1`}
+          } overflow-y-auto no-scrollbar flex-1`}
         >
           {activeProject === "Goji Health"
             ? "Co-founded startup that uses AI to predict demand for healthcare supply chain services. Spoke with over 20 directors of supply chain at hospitals around the country to understand their pain points. Won 2nd place and $15K on the Technology track from the Columbia Venture Competition."

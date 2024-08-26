@@ -85,7 +85,7 @@ export const ExperienceModal = ({
         <div
           className={`text-sm md:text-lg ${
             theme === "light" ? "text-gray-900" : "text-gray-200"
-          } overflow-y-auto`}
+          } overflow-y-auto no-scrollbar`}
         >
           {activeExperience === "Citadel"
             ? "Developed a new options trading platform with a 10x speed improvement for scrolling, symbol switch, and data rendering compared to similar platforms used in the firm. Achieved full feature parity to existing trading UIs, implementing 20+ features such as click trade, channeling, and quote level editing. Presented platform to key stakeholders, influencing developers to use the project as a new standard for building future trading platforms. Pushed the platform to production, onboarding 5 options traders who expect to earn millions in PNL from performance upgrades."
