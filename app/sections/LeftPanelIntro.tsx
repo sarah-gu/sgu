@@ -15,23 +15,23 @@ export const LeftPanelIntro = ({ theme }: { theme: string }) => {
             <Image
               src="/sarahgu.jpg"
               alt="Sarah Gu PFP"
-              layout="fill"
               style={{ objectFit: "cover" }}
+              fill
               priority
             />
           </div>
 
           <div className="flex flex-col h-1/3 justify-end gap-2">
-            <div className="h-1/3 md:h-1/6 w-4 md:w-8 hover:bg-pantone rounded-full">
+            <div className="h-1/3 md:h-1/6 w-4 md:w-8 rounded-full">
               <FacebookIcon theme={theme} />
             </div>
-            <div className="h-1/3 md:h-1/6 w-4 md:w-8 hover:bg-pantone rounded-full">
+            <div className="h-1/3 md:h-1/6 w-4 md:w-8 rounded-full">
               <GithubIcon theme={theme} />
             </div>
-            <div className="h-1/3 md:h-1/6 w-4 md:w-8 hover:bg-pantone rounded-full">
+            <div className="h-1/3 md:h-1/6 w-4 md:w-8 rounded-full">
               <InstagramIcon theme={theme} />
             </div>
-            <div className="h-1/3 md:h-1/6 w-4 md:w-8 hover:bg-pantone rounded-full">
+            <div className="h-1/3 md:h-1/6 w-4 md:w-8 rounded-full">
               <LinkedinIcon theme={theme} />
             </div>
           </div>

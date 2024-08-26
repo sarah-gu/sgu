@@ -24,13 +24,7 @@ export const HobbiesTab = (
       }}
       onClick={onClick}
     >
-      <Image
-        src={bgImg}
-        alt=""
-        layout="fill"
-        style={{ objectFit: "cover" }}
-        priority
-      />
+      <Image src={bgImg} alt="" style={{ objectFit: "cover" }} fill priority />
       {children}
     </div>
   );
