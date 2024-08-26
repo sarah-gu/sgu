@@ -11,7 +11,7 @@ import { Contact } from "../tabs/Contact";
 export const RightPanelContent = ({ theme }: { theme: string }) => {
   const [menuBar, setMenuBar] = useState<MenuBar>("About");
   return (
-    <div className="flex flex-col flex-1 gap-8 md:gap-16 w-full overflow-hidden">
+    <div className="flex flex-col flex-1 gap-8 md:gap-16 w-full overflow-hidden items-center">
       <MenuHeader menuBar={menuBar} setMenuBar={setMenuBar} theme={theme} />
       {menuBar === "Experience" ? (
         <Experience theme={theme} />

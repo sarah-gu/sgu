@@ -1,39 +1,72 @@
+import { useForm, ValidationError } from "@formspree/react";
 import React, { useState } from "react";
 
 export const Contact = () => {
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
+  const [email, setEmail] = useState("");
+  const [state, handleSubmit] = useForm("movaraek");
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Send the form data to your server or API here
-    console.log("Name:", name);
-    console.log("Message:", message);
-    // Reset the form fields
+  if (state.succeeded) {
+    alert("Thanks for reaching out! I'll get back to you soon.");
     setName("");
     setMessage("");
-  };
+  }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
+    <form
+      method="POST"
+      className=" bg-gray-200 rounded-lg drop-shadow-xl p-4 md:p-8 gap-4 md:gap-6 text-md md:text-xl flex flex-col justify-center items-center w-full"
+      onSubmit={handleSubmit}
+    >
+      Contact Me!
+      <div className="flex flex-col justify-center items-left w-full">
         <label htmlFor="name">Name:</label>
         <input
+          className="bg-slate-50 rounded-lg py-1 px-2 outline-none w-full"
           type="text"
           id="name"
           value={name}
           onChange={(e) => setName(e.target.value)}
+          required
         />
+        <ValidationError prefix="Name" field="name" errors={state.errors} />
       </div>
-      <div>
+      <div className="flex flex-col justify-center items-left w-full">
+        <label htmlFor="email">Email:</label>
+        <input
+          className="bg-slate-50 rounded-lg py-1 px-2 outline-none w-full"
+          type="text"
+          id="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+        <ValidationError prefix="Email" field="email" errors={state.errors} />
+      </div>
+      <div className="flex flex-col justify-center items-left w-full">
         <label htmlFor="message">Message:</label>
         <textarea
+          className="bg-slate-50 rounded-lg py-1 px-2 outline-none w-full"
           id="message"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-        ></textarea>
+          rows={6}
+        />
+        <ValidationError
+          prefix="Message"
+          field="message"
+          errors={state.errors}
+        />
       </div>
-      <button type="submit">Send</button>
+      <button
+        disabled={state.submitting}
+        className="border-pantone border-2 text-black hover:bg-pantone transition-all duration-300 py-2 px-4 rounded-lg"
+        type="submit"
+      >
+        Send
+      </button>
+      <ValidationError errors={state.errors} />
     </form>
   );
 };
