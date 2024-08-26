@@ -3,6 +3,8 @@ import Image from "next/image";
 import { useState } from "react";
 import { LeftPanelIntro } from "./sections/LeftPanelIntro";
 import { RightPanelContent } from "./sections/RightPanelContent";
+import { LightModeIcon } from "./icons/LightModeIcon";
+import { DarkModeIcon } from "./icons/DarkModeIcon";
 
 export default function Home() {
   const [theme, setTheme] = useState<"light" | "dark">("light");
@@ -14,14 +16,12 @@ export default function Home() {
     >
       <LeftPanelIntro theme={theme} />
       <RightPanelContent theme={theme} />
-      <Image
+      <div
         className="fixed bottom-10 right-10"
         onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-        src={`${theme === "light" ? "/darkmode_1.png" : "/lightmode_1.png"}`}
-        width={40}
-        height={40}
-        alt="lightmode"
-      />
+      >
+        {theme === "light" ? <DarkModeIcon /> : <LightModeIcon />}
+      </div>
     </main>
   );
 }

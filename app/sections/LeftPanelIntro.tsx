@@ -16,7 +16,7 @@ export const LeftPanelIntro = ({ theme }: { theme: string }) => {
               src="/sarahgu.jpg"
               alt="Sarah Gu PFP"
               layout="fill"
-              objectFit="cover"
+              style={{ objectFit: "cover" }}
               priority
             />
           </div>

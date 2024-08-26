@@ -36,7 +36,12 @@ export const ExperienceTab = ({
         <div className="text-gray-400 text-xs md:text-lg">{tabDescription}</div>
       </div>
       <div className="relative w-20 md:w-48 h-full shadow-md">
-        <Image src={imgPath} layout="fill" objectFit="cover" alt="logo" />
+        <Image
+          src={imgPath}
+          layout="fill"
+          style={{ objectFit: "cover" }}
+          alt="logo"
+        />
       </div>
     </div>
   );

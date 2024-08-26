@@ -18,9 +18,7 @@ export const MenuTab = ({
   >
     {menuName}
     <div
-      className={`absolute bottom-0 left-0 h-0.5 ${
-        theme === "light" ? `bg-pantone` : `bg-white`
-      } transition-all duration-300 ${
+      className={`absolute bottom-0 left-0 h-0.5bg-pantone transition-all duration-300 ${
         menuBar === menuName ? "w-full" : "w-0 group-hover:w-full"
       }`}
     ></div>

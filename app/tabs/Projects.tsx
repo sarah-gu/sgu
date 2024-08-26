@@ -1,11 +1,12 @@
 "use client";
-import { useState } from "react";
+import { use, useEffect, useState } from "react";
 import { HobbiesLabel } from "../components/HobbiesLabel";
 import { HobbiesTab } from "../components/HobbiesTab";
 import { ProjectModal } from "../components/ProjectModal";
 
 export const Projects = ({ theme }: { theme: string }) => {
   const [activeProject, setActiveProject] = useState<string>("");
+
   return (
     <>
       <div className="flex flex-col w-full h-full gap-1">

@@ -1,5 +1,6 @@
 import { DetailedHTMLProps, HTMLAttributes, ReactNode } from "react";
 import { twMerge } from "tailwind-merge";
+import Image from "next/image";
 
 export const HobbiesTab = (
   props: DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> & {
@@ -9,6 +10,7 @@ export const HobbiesTab = (
   }
 ) => {
   const { className, bgImg, children, onClick } = props;
+
   return (
     <div
       className={twMerge(
@@ -16,11 +18,19 @@ export const HobbiesTab = (
         className
       )}
       style={{
-        backgroundImage: `url('${bgImg}')`,
-        backgroundSize: "cover",
+        position: "relative",
+        width: "100%",
+        height: "100%",
       }}
       onClick={onClick}
     >
+      <Image
+        src={bgImg}
+        alt=""
+        layout="fill"
+        style={{ objectFit: "cover" }}
+        priority
+      />
       {children}
     </div>
   );

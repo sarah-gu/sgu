@@ -10,13 +10,17 @@ export const ExperienceModal = ({
   setActiveExperience: Dispatch<SetStateAction<string>>;
 }) => {
   return (
-    <div className="fixed inset-0 flex items-center justify-center z-50">
+    <div
+      className="fixed inset-0 flex items-center justify-center z-50"
+      onClick={() => setActiveExperience("")}
+    >
       <div
         className={`fixed inset-0 ${
           theme === "light" ? "bg-gray-900" : "bg-gray-600"
         } opacity-75`}
       ></div>{" "}
       <div
+        onClick={(e) => e.stopPropagation()}
         className={`flex flex-col z-10 ${
           theme === "light" ? "bg-gray-200" : "bg-gray-800"
         } m-10 p-6 md:p-10 gap-2 md:gap-4 rounded-lg w-2/3 h-2/3`}
@@ -25,12 +29,25 @@ export const ExperienceModal = ({
           <div className="text-3xl md:text-5xl">{activeExperience}</div>
           <button
             type="button"
-            className={`text-xl md:text-3xl ${
+            className={`${
               theme === "light" ? "text-gray-800" : "text-gray-200"
             } rounded-lg`}
             onClick={() => setActiveExperience("")}
           >
-            X
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              className="w-6 md:w-10"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18 18 6M6 6l12 12"
+              />
+            </svg>
           </button>
         </div>
         <div
