@@ -17,11 +17,6 @@ export const HobbiesTab = (
         `h-full justify-center items-center flex relative cursor-pointer`,
         className
       )}
-      style={{
-        position: "relative",
-        width: "100%",
-        height: "100%",
-      }}
       onClick={onClick}
     >
       <Image src={bgImg} alt="" style={{ objectFit: "cover" }} fill priority />
