@@ -8,15 +8,13 @@ export const Contact = () => {
   const [state, handleSubmit] = useForm("movaraek");
 
   if (state.succeeded) {
-    alert("Thanks for reaching out! I'll get back to you soon.");
-    setName("");
-    setMessage("");
-    setEmail("");
+    return <p>Thanks for reaching out! I&apos;ll get back to you soon.</p>;
   }
 
   return (
     <form
-      method="POST"
+      action="https://formspree.io/f/movaraek"
+      method="post"
       className=" bg-gray-200 rounded-lg drop-shadow-xl p-4 md:p-8 gap-4 md:gap-6 text-md md:text-xl flex flex-col justify-center items-center w-full"
       onSubmit={handleSubmit}
     >
@@ -27,6 +25,7 @@ export const Contact = () => {
           className="bg-slate-50 rounded-lg py-1 px-2 outline-none w-full"
           type="text"
           id="name"
+          name="name"
           value={name}
           onChange={(e) => setName(e.target.value)}
           required
@@ -39,9 +38,11 @@ export const Contact = () => {
           className="bg-slate-50 rounded-lg py-1 px-2 outline-none w-full"
           type="text"
           id="email"
+          name="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}$"
         />
         <ValidationError prefix="Email" field="email" errors={state.errors} />
       </div>
@@ -50,6 +51,7 @@ export const Contact = () => {
         <textarea
           className="bg-slate-50 rounded-lg py-1 px-2 outline-none w-full"
           id="message"
+          name="message"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           rows={6}
