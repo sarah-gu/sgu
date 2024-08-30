@@ -22,16 +22,16 @@ export const LeftPanelIntro = ({ theme }: { theme: string }) => {
           </div>
 
           <div className="flex flex-col h-1/3 justify-end gap-2">
-            <div className="h-1/3 md:h-1/6 w-4 md:w-8 rounded-full">
+            <div className="h-1/3 md:h-1/6 w-4 md:w-8 rounded-full cursor-pointer">
               <FacebookIcon theme={theme} />
             </div>
-            <div className="h-1/3 md:h-1/6 w-4 md:w-8 rounded-full">
+            <div className="h-1/3 md:h-1/6 w-4 md:w-8 rounded-full cursor-pointer">
               <GithubIcon theme={theme} />
             </div>
-            <div className="h-1/3 md:h-1/6 w-4 md:w-8 rounded-full">
+            <div className="h-1/3 md:h-1/6 w-4 md:w-8 rounded-full cursor-pointer">
               <InstagramIcon theme={theme} />
             </div>
-            <div className="h-1/3 md:h-1/6 w-4 md:w-8 rounded-full">
+            <div className="h-1/3 md:h-1/6 w-4 md:w-8 rounded-full cursor-pointer">
               <LinkedinIcon theme={theme} />
             </div>
           </div>

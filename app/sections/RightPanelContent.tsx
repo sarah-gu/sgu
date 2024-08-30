@@ -18,7 +18,7 @@ export const RightPanelContent = ({ theme }: { theme: string }) => {
       ) : menuBar === "About" ? (
         <About />
       ) : menuBar === "Hobbies" ? (
-        <Hobbies />
+        <Hobbies theme={theme} />
       ) : menuBar === "Projects" ? (
         <Projects theme={theme} />
       ) : (

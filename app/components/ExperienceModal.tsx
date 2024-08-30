@@ -70,12 +70,12 @@ export const ExperienceModal = ({
             : ""}
         </div>
         {activeExperience === "Vivid" ? (
-          <div className="text-gray-500 text-md md:text-xl italic">
+          <div className="text-gray-500 text-sm md:text-lg italic">
             Pre-seed, three-person startup converting Figma designs to frontend
             code.
           </div>
         ) : activeExperience === "Phia" ? (
-          <div className="text-gray-500 text-md md:text-xl italic">
+          <div className="text-gray-500 text-sm md:text-lg italic">
             Pre-seed stage, secondhand e-commerce startup led by Phoebe Gates &
             Sophia Kianni.
           </div>
@@ -88,7 +88,7 @@ export const ExperienceModal = ({
           } overflow-y-auto no-scrollbar`}
         >
           {activeExperience === "Citadel"
-            ? "Developed a new options trading platform with a 10x speed improvement for scrolling, symbol switch, and data rendering compared to similar platforms used in the firm. Achieved full feature parity to existing trading UIs, implementing 20+ features such as click trade, channeling, and quote level editing. Presented platform to key stakeholders, influencing developers to use the project as a new standard for building future trading platforms. Pushed the platform to production, onboarding 5 options traders who expect to earn millions in PNL from performance upgrades."
+            ? `Developed a new options trading platform with a 10x speed improvement for scrolling, symbol switch, and data rendering compared to similar platforms used in the firm. \n Achieved full feature parity to existing trading UIs, implementing 20+ features such as click trade, channeling, and quote level editing. Presented platform to key stakeholders, influencing developers to use the project as a new standard for building future trading platforms. Pushed the platform to production, onboarding 5 options traders who expect to earn millions in PNL from performance upgrades.`
             : activeExperience === "Phia"
             ? "Built out pipeline for tracking purchases based on affiliate link UTM paramters, scraping data from 5+ partner networks and streaming into a BigQuery database. Set up cron job on GCP to run daily. Owned the Analytics dashboard on Amplitude, establishing user interaction tracking for 30+ metrics, such as DAU/MAU, AOV, and User Retention."
             : activeExperience === "Microsoft"
