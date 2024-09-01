@@ -17,7 +17,7 @@ export const Contact = ({ theme }: { theme: string }) => {
       method="post"
       className={`${
         theme === "light" ? "bg-gray-200" : "bg-gray-700"
-      }  rounded-lg drop-shadow-xl p-4 md:p-8 gap-4 md:gap-6 text-md md:text-xl flex flex-col justify-center items-center w-full`}
+      }  rounded-lg drop-shadow-xl p-4 md:p-8 gap-4 md:gap-6 text-md md:text-2xl flex flex-col justify-center items-left w-full`}
       onSubmit={handleSubmit}
     >
       Contact Me!
@@ -66,7 +66,7 @@ export const Contact = ({ theme }: { theme: string }) => {
       </div>
       <button
         disabled={state.submitting}
-        className="text-white bg-pantone transition-all duration-300 py-2 px-4 rounded-lg"
+        className="text-white text-sm bg-pantone hover:bg-pantone-dark transition-all duration-300 py-2 px-4 rounded-lg"
         type="submit"
       >
         Send

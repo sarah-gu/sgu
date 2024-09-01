@@ -10,7 +10,7 @@ const config: Config = {
     extend: {
       colors: {
         pantone: "#69B3E7",
-        "pantone-hover": "#FFEA00",
+        "pantone-dark": "#235789",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
