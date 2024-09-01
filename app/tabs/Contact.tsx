@@ -1,7 +1,7 @@
 import { useForm, ValidationError } from "@formspree/react";
 import React, { useState } from "react";
 
-export const Contact = () => {
+export const Contact = ({ theme }: { theme: string }) => {
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
   const [email, setEmail] = useState("");
@@ -15,12 +15,14 @@ export const Contact = () => {
     <form
       action="https://formspree.io/f/movaraek"
       method="post"
-      className=" bg-gray-200 rounded-lg drop-shadow-xl p-4 md:p-8 gap-4 md:gap-6 text-md md:text-xl flex flex-col justify-center items-center w-full"
+      className={`${
+        theme === "light" ? "bg-gray-200" : "bg-gray-700"
+      }  rounded-lg drop-shadow-xl p-4 md:p-8 gap-4 md:gap-6 text-md md:text-xl flex flex-col justify-center items-center w-full`}
       onSubmit={handleSubmit}
     >
       Contact Me!
-      <div className="flex flex-col justify-center items-left w-full">
-        <label htmlFor="name">Name:</label>
+      <div className="text-sm flex flex-col justify-center items-left w-full">
+        <label htmlFor="name">Name</label>
         <input
           className="bg-slate-50 rounded-lg py-1 px-2 outline-none w-full"
           type="text"
@@ -32,8 +34,8 @@ export const Contact = () => {
         />
         <ValidationError prefix="Name" field="name" errors={state.errors} />
       </div>
-      <div className="flex flex-col justify-center items-left w-full">
-        <label htmlFor="email">Email:</label>
+      <div className="text-sm flex flex-col justify-center items-left w-full">
+        <label htmlFor="email">Email</label>
         <input
           className="bg-slate-50 rounded-lg py-1 px-2 outline-none w-full"
           type="text"
@@ -46,8 +48,8 @@ export const Contact = () => {
         />
         <ValidationError prefix="Email" field="email" errors={state.errors} />
       </div>
-      <div className="flex flex-col justify-center items-left w-full">
-        <label htmlFor="message">Message:</label>
+      <div className="text-sm flex flex-col justify-center items-left w-full">
+        <label htmlFor="message">Message</label>
         <textarea
           className="bg-slate-50 rounded-lg py-1 px-2 outline-none w-full"
           id="message"
@@ -64,7 +66,7 @@ export const Contact = () => {
       </div>
       <button
         disabled={state.submitting}
-        className="border-pantone border-2 text-black hover:bg-pantone transition-all duration-300 py-2 px-4 rounded-lg"
+        className="text-white bg-pantone transition-all duration-300 py-2 px-4 rounded-lg"
         type="submit"
       >
         Send

@@ -31,11 +31,11 @@ export const InstagramIcon = ({ theme }: { theme: string }) => {
         fill:
           theme === "dark"
             ? isHovered
-              ? "#D3D3D3"
-              : "#A9A9A9"
+              ? "#FFEA00"
+              : "#E15153"
             : isHovered
-            ? "#A9A9A9"
-            : "#D3D3D3",
+            ? "#E15153"
+            : "#FFEA00",
       }}
     >
       <path

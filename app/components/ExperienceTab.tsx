@@ -30,12 +30,16 @@ export const ExperienceTab = ({
           theme === "light"
             ? `bg-gray-100 hover:bg-gray-200 transition-colors duration-300`
             : `bg-gray-800 hover:bg-gray-700 transition-colors duration-300`
-        } flex flex-col shadow-md`}
+        } flex flex-col`}
       >
         <div className="font-black text-sm md:text-xl">{tabName}</div>
         <div className="text-gray-400 text-xs md:text-lg">{tabDescription}</div>
       </div>
-      <div className="relative w-20 md:w-48 h-full shadow-md">
+      <div
+        className={`relative w-20 md:w-48 h-full border-2 ${
+          theme === "light" ? "border-gray-200" : "border-gray-700"
+        } `}
+      >
         <Image src={imgPath} style={{ objectFit: "cover" }} fill alt="logo" />
       </div>
     </div>

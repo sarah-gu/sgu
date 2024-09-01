@@ -56,7 +56,7 @@ export const HobbiesModal = ({
           }`}
         >
           {activeHobby === "Camino de Santiago" ? (
-            <div>🚶🏻‍♀️ 800km Walk Across Spain"</div>
+            <div>🚶🏻‍♀️ 800km Walk Across Spain</div>
           ) : (
             ""
           )}

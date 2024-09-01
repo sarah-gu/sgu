@@ -22,7 +22,7 @@ export const RightPanelContent = ({ theme }: { theme: string }) => {
       ) : menuBar === "Projects" ? (
         <Projects theme={theme} />
       ) : (
-        <Contact />
+        <Contact theme={theme} />
       )}
     </div>
   );

@@ -14,7 +14,7 @@ export const MenuTab = ({
 }) => (
   <div
     onClick={() => setMenuBar((prevMenuBar) => menuName)}
-    className="relative cursor-pointer group"
+    className="relative cursor-pointer group select-none"
   >
     {menuName}
     <div

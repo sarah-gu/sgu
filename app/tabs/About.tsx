@@ -1,7 +1,9 @@
 export const About = () => {
   return (
     <div className="text-sm md:text-xl flex flex-col gap-12">
-      <div>Hi! I&apos;m Sarah Gu, a software engineer and builder. ☺︎</div>
+      <div className="text-md md:text-2xl">
+        Hi! I&apos;m Sarah Gu, a software engineer and builder. ☺︎
+      </div>
       <div>
         I&apos;m passionate about creating and building things, whether
         it&apos;s software, hardware, or something in between. I&apos;m a recent
