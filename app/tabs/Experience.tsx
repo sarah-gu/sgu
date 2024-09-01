@@ -13,7 +13,7 @@ export const Experience = ({ theme }: { theme: string }) => {
           theme={theme}
           companyName="Citadel"
           tabName="Front-End Engineer"
-          tabDescription="Full-time, 2024 --; Internship, 2023"
+          tabDescription="Full-time, 2024; Internship, 2023"
           imgPath="/citadel.png"
           activeExperience={activeExperience}
           setActiveExperience={setActiveExperience}

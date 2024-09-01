@@ -29,13 +29,13 @@ export const InstagramIcon = ({ theme }: { theme: string }) => {
       style={{
         transition: "fill .3s ease",
         fill:
-          theme === "light"
+          theme === "dark"
             ? isHovered
-              ? "#1E1E1E"
-              : "#F9FAFB"
+              ? "#D3D3D3"
+              : "#A9A9A9"
             : isHovered
-            ? "#F9FAFB"
-            : "#1E1E1E",
+            ? "#A9A9A9"
+            : "#D3D3D3",
       }}
     >
       <path
