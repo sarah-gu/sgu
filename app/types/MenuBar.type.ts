@@ -3,4 +3,4 @@ export type MenuBar =
   | "Experience"
   | "Projects"
   | "Hobbies"
-  | "Contact";
+  | "Travel";

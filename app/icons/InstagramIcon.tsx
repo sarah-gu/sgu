@@ -28,14 +28,6 @@ export const InstagramIcon = ({ theme }: { theme: string }) => {
       onClick={handleClick}
       style={{
         transition: "fill .3s ease",
-        fill:
-          theme === "dark"
-            ? isHovered
-              ? "#69B3E7"
-              : "#235789"
-            : isHovered
-            ? "#235789"
-            : "#69B3E7",
       }}
     >
       <path

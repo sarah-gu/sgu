@@ -6,7 +6,7 @@ import { LinkedinIcon } from "../icons/LinkedinIcon";
 
 export const LeftPanelIntro = ({ theme }: { theme: string }) => {
   return (
-    <div className="flex flex-col w-full md:w-1/3 md:h-full">
+    <div className="flex flex-col w-full md:w-1/3 md:h-full z-10">
       <div className="flex flex-row md:flex-col w-full md:gap-16 justify-between items-center md:items-start">
         <div className="text-5xl md:text-7xl">Sarah Gu</div>
 

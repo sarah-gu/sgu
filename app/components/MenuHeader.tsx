@@ -37,7 +37,7 @@ export const MenuHeader = ({
       theme={theme}
     />
     <MenuTab
-      menuName="Contact"
+      menuName="Travel"
       menuBar={menuBar}
       setMenuBar={setMenuBar}
       theme={theme}
