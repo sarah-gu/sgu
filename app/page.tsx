@@ -7,7 +7,7 @@ import { LightModeIcon } from "./icons/LightModeIcon";
 import { DarkModeIcon } from "./icons/DarkModeIcon";
 
 export default function Home() {
-  const [theme, setTheme] = useState<"light" | "dark">("light");
+  const [theme, setTheme] = useState<"light" | "dark">("dark");
   return (
     <main
       className={`relative overflow-hidden ${
