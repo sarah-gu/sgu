@@ -8,7 +8,7 @@ const projects = [
     img: "/goji.png",
     award: "🏆 Winner of $15K from the Columbia Venture Competition",
     description:
-      "Co-founded startup that uses AI to predict demand for healthcare supply chain services. Spoke with over 20 directors of supply chain at hospitals around the country to understand their pain points. Won $15K on the Technology track from the Columbia Venture Competition.",
+      "Co-founded startup that uses AI to predict demand for healthcare supply chain services. Spoke with directors of supply chain at hospitals around the country to understand their pain points. Won $15K on the Technology track from the Columbia Venture Competition.",
     link: "https://github.com/sarah-gu/dumpling",
   },
   {
@@ -222,8 +222,8 @@ export const Projects = ({ theme }: { theme: string }) => {
               idx === current
                 ? "bg-pantone w-4 h-2"
                 : isDark
-                ? "bg-gray-600 hover:bg-gray-500 w-2 h-2"
-                : "bg-gray-300 hover:bg-gray-400 w-2 h-2"
+                  ? "bg-gray-600 hover:bg-gray-500 w-2 h-2"
+                  : "bg-gray-300 hover:bg-gray-400 w-2 h-2"
             }`}
             onClick={() => handleDot(idx)}
             aria-label={`Go to project ${idx + 1}`}
