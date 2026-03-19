@@ -1,4 +1,5 @@
-import { Dispatch, SetStateAction } from "react";
+"use client";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 
 export const ExperienceModal = ({
   theme,
@@ -9,42 +10,57 @@ export const ExperienceModal = ({
   activeExperience: string;
   setActiveExperience: Dispatch<SetStateAction<string>>;
 }) => {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    requestAnimationFrame(() => setMounted(true));
+  }, []);
+
+  const handleClose = () => {
+    setMounted(false);
+    setTimeout(() => setActiveExperience(""), 200);
+  };
+
   return (
     <div
-      className="fixed inset-0 flex items-center justify-center z-50"
-      onClick={() => setActiveExperience("")}
+      className={`fixed inset-0 flex items-center justify-center z-50 transition-opacity duration-200 ${
+        mounted ? "opacity-100" : "opacity-0"
+      }`}
+      onClick={handleClose}
     >
       <div
         className={`fixed inset-0 ${
           theme === "light" ? "bg-gray-900" : "bg-gray-600"
-        } opacity-75`}
-      ></div>{" "}
+        } ${mounted ? "opacity-75" : "opacity-0"} transition-opacity duration-200`}
+      ></div>
       <div
         onClick={(e) => e.stopPropagation()}
         className={`flex flex-col z-10 ${
           theme === "light" ? "bg-gray-200" : "bg-gray-800"
-        } m-10 p-6 md:p-10 gap-2 md:gap-4 rounded-lg w-2/3 h-2/3`}
+        } m-10 p-6 md:p-10 gap-2 md:gap-4 rounded-lg w-2/3 h-2/3 transition-all duration-200 ${
+          mounted ? "opacity-100 scale-100" : "opacity-0 scale-95"
+        }`}
       >
         <div className="flex flex-row justify-between">
           <div className="text-3xl md:text-5xl">{activeExperience}</div>
           <button
             type="button"
             className={`${
-              theme === "light" ? "text-gray-800" : "text-gray-200"
-            } rounded-lg`}
-            onClick={() => setActiveExperience("")}
+              theme === "light" ? "text-gray-800 hover:text-gray-600" : "text-gray-200 hover:text-white"
+            } rounded-lg transition-colors duration-200`}
+            onClick={handleClose}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
-              stroke-width="1.5"
+              strokeWidth="1.5"
               stroke="currentColor"
               className="w-6 md:w-10"
             >
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 d="M6 18 18 6M6 6l12 12"
               />
             </svg>
@@ -94,9 +110,9 @@ export const ExperienceModal = ({
             : activeExperience === "Microsoft"
             ? "Engineered a new monitoring pipeline for Azure App Services, yielding a 30x improvement on the number of metrics logged. Synthesized data from over 2,500 servers on the cloud and wired together 4+ platforms across Azure to cleanly stream logs to a Kusto Database. Learned about cloud architecture and resource allocation for Azure apps. Deployed monitoring system to production, actively tracking all Azure App Service servers currently on the cloud."
             : activeExperience === "Vivid"
-            ? "Owned the company’s onboarding workflow, building an AI-powered internal webpage to automatically link React components to their corresponding Figma designs. Designed and developed the entire user experience, prototyping in Figma and implementing with React, Typescript, and Tailwind CSS. Engaged in client meetings, investor updates, and customer validation."
+            ? "Owned the company's onboarding workflow, building an AI-powered internal webpage to automatically link React components to their corresponding Figma designs. Designed and developed the entire user experience, prototyping in Figma and implementing with React, Typescript, and Tailwind CSS. Engaged in client meetings, investor updates, and customer validation."
             : activeExperience === "Facebook"
-            ? "Independently developed a note-sharing & transcribing iOS app in XCode & Objective-C, leveraging Apple’s Core Machine Learning API to convert handwriting in image to text. Programmed functionalities to sort notes by class, search by caption, and find friends. Worked on the Core Health Radar & Detection team."
+            ? "Independently developed a note-sharing & transcribing iOS app in XCode & Objective-C, leveraging Apple's Core Machine Learning API to convert handwriting in image to text. Programmed functionalities to sort notes by class, search by caption, and find friends. Worked on the Core Health Radar & Detection team."
             : activeExperience === "MITRE"
             ? "2020: Implemented 10+ IR-image detection networks to produce a 93% accurate model, outperforming the needs of an external client. Leveraged frameworks in Pytorch and Tensorflow, alongside state-of-the-art networks to find the best performing object detection model. 2019: Discovered the vulnerability of the BERT AI model to an adversarial data-leaking attack, after running 15+ deep learning tests. Ran white-box simulations and found up to 70% of data was exposed. 2018: Engineered a machine learning pipeline to decipher thought, specifically designing neural network architectures to decode brainwaves from denoised EEG data to text."
             : ""}

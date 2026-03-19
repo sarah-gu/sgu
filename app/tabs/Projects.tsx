@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ProjectsTab } from "../components/ProjectsTab";
 
 const projects = [
@@ -73,122 +73,163 @@ const projects = [
 ];
 
 export const Projects = ({ theme }: { theme: string }) => {
-  const [activeProject, setActiveProject] = useState<string>("");
   const [current, setCurrent] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [displayIdx, setDisplayIdx] = useState(0);
+  const [direction, setDirection] = useState<"left" | "right">("right");
+
+  useEffect(() => {
+    if (current !== displayIdx) {
+      setIsTransitioning(true);
+      const timer = setTimeout(() => {
+        setDisplayIdx(current);
+        setIsTransitioning(false);
+      }, 250);
+      return () => clearTimeout(timer);
+    }
+  }, [current, displayIdx]);
 
   const handlePrev = () => {
-    const idx = (current - 1 + projects.length) % projects.length;
-    setCurrent(idx);
+    if (isTransitioning) return;
+    setDirection("left");
+    setCurrent((current - 1 + projects.length) % projects.length);
   };
 
   const handleNext = () => {
-    const idx = (current + 1) % projects.length;
+    if (isTransitioning) return;
+    setDirection("right");
+    setCurrent((current + 1) % projects.length);
+  };
+
+  const handleDot = (idx: number) => {
+    if (isTransitioning || idx === current) return;
+    setDirection(idx > current ? "right" : "left");
     setCurrent(idx);
   };
 
-  const project = projects[current];
-  const prevIdx = (current - 1 + projects.length) % projects.length;
-  const nextIdxForPreview = (current + 1) % projects.length;
+  const project = projects[displayIdx];
+  const prevIdx = (displayIdx - 1 + projects.length) % projects.length;
+  const nextIdxForPreview = (displayIdx + 1) % projects.length;
   const prevProject = projects[prevIdx];
   const nextProject = projects[nextIdxForPreview];
 
+  const slideOffset = isTransitioning
+    ? direction === "right"
+      ? "-translate-x-8 opacity-0"
+      : "translate-x-8 opacity-0"
+    : "translate-x-0 opacity-100";
+
+  const isDark = theme === "dark";
+
   return (
-    <>
-      <div className="w-full h-full flex flex-col items-center justify-center relative">
-        <div className="w-full max-w-md h-full flex items-center justify-center relative">
-          {/* Previous project preview */}
-          <div
-            className="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-[120%] w-3/5 h-3/4 z-0 pointer-events-none"
-            style={{
-              opacity: 0.6,
-              filter: "blur(1px) grayscale(40%)",
-              transform: "translate(-120%, -50%) scale(0.85)",
-            }}
-          >
-            <ProjectsTab
-              theme={theme}
-              description={prevProject.description}
-              label={prevProject.name}
-              award={project.award}
-              bgImg={prevProject.img}
-            />
-          </div>
-          {/* Next project preview */}
-          <div
-            className="absolute left-1/2 top-1/2 -translate-y-1/2 translate-x-[20%] w-3/5 h-3/4 z-0 pointer-events-none"
-            style={{
-              opacity: 0.6,
-              filter: "blur(1px) grayscale(40%)",
-              transform: "translate(20%, -50%) scale(0.85)",
-            }}
-          >
-            <ProjectsTab
-              theme={theme}
-              description={nextProject.description}
-              label={nextProject.name}
-              award={project.award}
-              bgImg={nextProject.img}
-            />
-          </div>
-          {/* Main project */}
-          <button
-            aria-label="Previous project"
-            onClick={handlePrev}
-            className="absolute left-0 z-20 bg-white/60 dark:bg-black/60 rounded-full p-2 shadow hover:scale-110 top-1/2 -translate-y-1/2 -translate-x-1/2"
-          >
-            <svg
-              width="24"
-              height="24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-            >
-              <path d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
-          <div className="w-full h-full flex items-center justify-center z-10 relative">
-            <ProjectsTab
-              theme={theme}
-              description={project.description}
-              award={project.award}
-              label={project.name}
-              bgImg={project.img}
-              onClick={() => window.open(project.link, "_blank")}
-            />
-          </div>
-          <button
-            aria-label="Next project"
-            onClick={handleNext}
-            className="absolute right-0 z-10 bg-white/60 dark:bg-black/60 rounded-full p-2 shadow hover:scale-110 top-1/2 -translate-y-1/2 translate-x-1/2"
-          >
-            <svg
-              width="24"
-              height="24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-            >
-              <path d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
+    <div className="w-full h-full flex flex-col items-center justify-center relative">
+      <div className="w-full max-w-md h-full flex items-center justify-center relative">
+        {/* Previous project preview */}
+        <div
+          className="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-[120%] w-3/5 h-3/4 z-0 pointer-events-none transition-all duration-500 ease-out"
+          style={{
+            opacity: isTransitioning ? 0.3 : 0.6,
+            filter: "blur(1px) grayscale(40%)",
+            transform: `translate(-120%, -50%) scale(${isTransitioning ? 0.8 : 0.85})`,
+          }}
+        >
+          <ProjectsTab
+            theme={theme}
+            description={prevProject.description}
+            label={prevProject.name}
+            award={prevProject.award}
+            bgImg={prevProject.img}
+          />
         </div>
-        <div className="flex gap-2 mt-4">
-          {projects.map((_, idx) => (
-            <button
-              key={idx}
-              className={`w-2 h-2 rounded-full ${
-                idx === current
-                  ? "bg-pantone scale-125"
-                  : "bg-gray-300 dark:bg-gray-700"
-              }`}
-              onClick={() => setCurrent(idx)}
-              aria-label={`Go to project ${idx + 1}`}
-            />
-          ))}
+        {/* Next project preview */}
+        <div
+          className="absolute left-1/2 top-1/2 -translate-y-1/2 translate-x-[20%] w-3/5 h-3/4 z-0 pointer-events-none transition-all duration-500 ease-out"
+          style={{
+            opacity: isTransitioning ? 0.3 : 0.6,
+            filter: "blur(1px) grayscale(40%)",
+            transform: `translate(20%, -50%) scale(${isTransitioning ? 0.8 : 0.85})`,
+          }}
+        >
+          <ProjectsTab
+            theme={theme}
+            description={nextProject.description}
+            label={nextProject.name}
+            award={nextProject.award}
+            bgImg={nextProject.img}
+          />
         </div>
+        {/* Nav arrows */}
+        <button
+          aria-label="Previous project"
+          onClick={handlePrev}
+          className={`absolute left-0 z-20 rounded-full p-2 shadow-md top-1/2 -translate-y-1/2 -translate-x-1/2 transition-all duration-200 hover:scale-110 active:scale-95 ${
+            isDark
+              ? "bg-gray-800/80 hover:bg-gray-700/90 text-gray-200"
+              : "bg-white/80 hover:bg-white text-gray-700"
+          }`}
+        >
+          <svg
+            width="24"
+            height="24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            viewBox="0 0 24 24"
+          >
+            <path d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+        {/* Main project with slide transition */}
+        <div
+          className={`w-full h-full flex items-center justify-center z-10 relative transition-all duration-300 ease-out ${slideOffset}`}
+        >
+          <ProjectsTab
+            theme={theme}
+            description={project.description}
+            award={project.award}
+            label={project.name}
+            bgImg={project.img}
+            onClick={() => window.open(project.link, "_blank")}
+          />
+        </div>
+        <button
+          aria-label="Next project"
+          onClick={handleNext}
+          className={`absolute right-0 z-10 rounded-full p-2 shadow-md top-1/2 -translate-y-1/2 translate-x-1/2 transition-all duration-200 hover:scale-110 active:scale-95 ${
+            isDark
+              ? "bg-gray-800/80 hover:bg-gray-700/90 text-gray-200"
+              : "bg-white/80 hover:bg-white text-gray-700"
+          }`}
+        >
+          <svg
+            width="24"
+            height="24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            viewBox="0 0 24 24"
+          >
+            <path d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
       </div>
-    </>
+      {/* Dot indicators */}
+      <div className="flex gap-2 mt-4">
+        {projects.map((_, idx) => (
+          <button
+            key={idx}
+            className={`rounded-full transition-all duration-300 ${
+              idx === current
+                ? "bg-pantone w-4 h-2"
+                : isDark
+                ? "bg-gray-600 hover:bg-gray-500 w-2 h-2"
+                : "bg-gray-300 hover:bg-gray-400 w-2 h-2"
+            }`}
+            onClick={() => handleDot(idx)}
+            aria-label={`Go to project ${idx + 1}`}
+          />
+        ))}
+      </div>
+    </div>
   );
 };

@@ -20,7 +20,7 @@ export const ExperienceTab = ({
 }) => {
   return (
     <div
-      className="flex flex-row justify-between"
+      className="flex flex-row justify-between cursor-pointer rounded-lg overflow-hidden transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-lg"
       onClick={() => {
         setActiveExperience(() => companyName);
       }}
@@ -28,9 +28,9 @@ export const ExperienceTab = ({
       <div
         className={`px-4 py-2 md:p-6 w-full ${
           theme === "light"
-            ? `bg-gray-100 hover:bg-gray-200 transition-colors duration-300`
-            : `bg-gray-800 hover:bg-gray-700 transition-colors duration-300`
-        } flex flex-col`}
+            ? `bg-gray-100 hover:bg-gray-200`
+            : `bg-gray-800 hover:bg-gray-700`
+        } transition-colors duration-300 flex flex-col`}
       >
         <div className="font-black text-sm md:text-xl">{tabName}</div>
         <div className="text-gray-400 text-xs md:text-lg">{tabDescription}</div>

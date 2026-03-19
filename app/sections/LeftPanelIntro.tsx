@@ -11,7 +11,7 @@ export const LeftPanelIntro = ({ theme }: { theme: string }) => {
         <div className="text-5xl md:text-7xl">Sarah Gu</div>
 
         <div className="flex flex-row gap-1 items-end">
-          <div className="w-24 h-24 md:w-72 md:h-96 relative">
+          <div className="w-24 h-24 md:w-72 md:h-96 relative overflow-hidden rounded-sm">
             <Image
               src="/sarahgu.jpg"
               alt="Sarah Gu PFP"
@@ -22,16 +22,16 @@ export const LeftPanelIntro = ({ theme }: { theme: string }) => {
           </div>
 
           <div className="flex flex-col h-1/3 justify-end gap-2">
-            <div className="h-1/3 md:h-1/6 w-4 md:w-8 rounded-full cursor-pointer">
+            <div className="h-1/3 md:h-1/6 w-4 md:w-8 rounded-full cursor-pointer transition-transform duration-200 hover:scale-110">
               <FacebookIcon theme={theme} />
             </div>
-            <div className="h-1/3 md:h-1/6 w-4 md:w-8 rounded-full cursor-pointer">
+            <div className="h-1/3 md:h-1/6 w-4 md:w-8 rounded-full cursor-pointer transition-transform duration-200 hover:scale-110">
               <GithubIcon theme={theme} />
             </div>
-            <div className="h-1/3 md:h-1/6 w-4 md:w-8 rounded-full cursor-pointer">
+            <div className="h-1/3 md:h-1/6 w-4 md:w-8 rounded-full cursor-pointer transition-transform duration-200 hover:scale-110">
               <InstagramIcon theme={theme} />
             </div>
-            <div className="h-1/3 md:h-1/6 w-4 md:w-8 rounded-full cursor-pointer">
+            <div className="h-1/3 md:h-1/6 w-4 md:w-8 rounded-full cursor-pointer transition-transform duration-200 hover:scale-110">
               <LinkedinIcon theme={theme} />
             </div>
           </div>

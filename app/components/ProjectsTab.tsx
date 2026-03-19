@@ -19,9 +19,9 @@ export const ProjectsTab = ({
 
   return (
     <div
-      className={`p-1 h-full w-full flex flex-col relative cursor-pointer rounded-lg shadow-xl transition-shadow duration-300 overflow-hidden ${
-        isDark ? "bg-gray-800 shadow-gray-900" : "bg-white"
-      }`}
+      className={`p-1 h-full w-full flex flex-col relative rounded-lg shadow-xl overflow-hidden transition-all duration-300 ${
+        onClick ? "cursor-pointer hover:shadow-2xl hover:-translate-y-1" : ""
+      } ${isDark ? "bg-gray-800 shadow-gray-900" : "bg-white"}`}
       onClick={onClick}
     >
       <h1

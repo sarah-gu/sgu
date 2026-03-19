@@ -6,18 +6,16 @@ export const HobbiesTab = (
   props: DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> & {
     bgImg: string;
     children: ReactNode;
-    onClick?: () => void;
   }
 ) => {
-  const { className, bgImg, children, onClick } = props;
+  const { className, bgImg, children } = props;
 
   return (
     <div
       className={twMerge(
-        `h-full justify-center items-center flex relative cursor-pointer`,
+        `h-full justify-center items-center flex relative overflow-hidden`,
         className
       )}
-      onClick={onClick}
     >
       <Image src={bgImg} alt="" style={{ objectFit: "cover" }} fill priority />
       {children}
