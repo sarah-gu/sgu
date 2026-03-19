@@ -8,7 +8,7 @@ const projects = [
     img: "/goji.png",
     award: "🏆 Winner of $15K from the Columbia Venture Competition",
     description:
-      "Co-founded startup that uses AI to predict demand for healthcare supply chain services. Spoke with directors of supply chain at hospitals around the country to understand their pain points. Won $15K on the Technology track from the Columbia Venture Competition.",
+      "AI-powered startup predicting demand for healthcare supply chain services. Interviewed hospital supply chain directors nationwide to validate the problem.",
     link: "https://github.com/sarah-gu/dumpling",
   },
   {
@@ -16,7 +16,7 @@ const projects = [
     img: "/seniorscramble.png",
     award: "700+ Active Users in 1 Month",
     description:
-      "Built the 2024 Columbia Senior Scramble website, following a tradition where seniors 'scramble' classmates in the last few weeks of school. Over 600 users joined and hundreds of hours of usage time was logged on the site within 2 weeks. Built using React on the frontend, Prisma, AWS, and PostgreSQL on the backend.",
+      "Built Columbia's 2024 Senior Scramble site — 700+ users and hundreds of hours logged in two weeks. React, Prisma, AWS, and PostgreSQL.",
     link: "https://github.com/sarah-gu/beautiful-landing-page",
   },
   {
@@ -24,28 +24,28 @@ const projects = [
     img: "/grazepro.png",
     award: "🏆 Winner of TreeHacks 2023 (1000+ Participants)",
     description:
-      "2023 TreeHacks project to predict rotational grazing. My team and I got robbed hours before the hackathon and built the entire app on three dorm monitors at Stanford.",
+      "Rotational grazing prediction app built at TreeHacks. We got robbed hours before the hackathon and built the whole thing on three dorm monitors at Stanford.",
     link: "https://github.com/sarah-gu/graze-pro",
   },
   {
     name: "FortuneGPT",
     img: "/fortunegpt.png",
     description:
-      "Project leveraging OpenAI's GPT-3 API. Used the API to generate fortunes and horoscopes for users.",
+      "GPT-3 powered app that generates personalized fortunes and horoscopes.",
     link: "https://github.com/sarah-gu/openai-api-testing",
   },
   {
     name: "Birthday Countdown",
     img: "/birthdaycountdown.png",
     description:
-      "Simple project to count down to a birthday, with photos and animations that pop up across the screen. Used React and Tailwind CSS to build the site.",
+      "Animated birthday countdown with photos and confetti effects. Built with React and Tailwind.",
     link: "https://github.com/sarah-gu/birthday-countdown",
   },
   {
     name: "Sound Match",
     img: "/soundmatch.png",
     description:
-      "Matching game to test users' ability to match sounds with different frequencies and tunes. Used React and Tailwind CSS to build the site.",
+      "Audio matching game that tests your ear for different frequencies and tunes. React and Tailwind.",
     link: "https://github.com/sarah-gu/sound-match",
   },
   {
@@ -53,21 +53,21 @@ const projects = [
     img: "/coronavoice.png",
     award: "🏆 Winner of EarthxHack 2020 (800+ Participants)",
     description:
-      "2020 EarthxHack project to attempt to diagnose COVID based on changes in vocal inflection. NLP model used on the backend and embedded into a webpage to test user's voices.",
+      "NLP-based COVID screening tool that analyzes changes in vocal inflection to flag potential infection.",
     link: "https://github.com/neeyanthkvk/mycovidtracker",
   },
   {
     name: "Fishbowl",
     img: "/fishbowl.png",
     description:
-      "One of my first independent projects ever, built during COVID to bring a game called Fishbowl that my friends and I loved to play in person online. Used plain HTML, CSS, and JS to build the site.",
+      "One of my first projects — brought the party game Fishbowl online during COVID so friends could keep playing. Built with vanilla HTML, CSS, and JS.",
     link: "https://github.com/sarah-gu/fishbowl",
   },
   {
     name: "myAIScribe",
     img: "/myAIscribe.png",
     description:
-      "FBU 2021 final project to transcribe handwriting in images to text, in order to share notes and study tools with clasmates. Used Apple's Core ML API to convert handwriting in images to text. Built in XCode and Objective-C.",
+      "iOS app that transcribes handwriting from photos into shareable text notes using Apple's Core ML. Built in Xcode with Objective-C.",
     link: "https://github.com/sarah-gu/myAIScribe",
   },
 ];
