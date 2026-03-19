@@ -12,7 +12,7 @@ export const Experience = ({ theme }: { theme: string }) => {
         <ExperienceTab
           theme={theme}
           companyName="Citadel"
-          tabName="Front-End Engineer"
+          tabName="Full-Stack Engineer"
           tabDescription="Full-time, 2024; Internship, 2023"
           imgPath="/citadel.png"
           activeExperience={activeExperience}
@@ -21,7 +21,7 @@ export const Experience = ({ theme }: { theme: string }) => {
         <ExperienceTab
           theme={theme}
           companyName="Phia"
-          tabName="Full-Stack Engineer"
+          tabName="Data Engineer"
           tabDescription="Part-time, 2024"
           imgPath="/phia.png"
           activeExperience={activeExperience}
